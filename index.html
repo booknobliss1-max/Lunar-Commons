@@ -16,6 +16,19 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Lunar Commons | CultureCare Dashboard</title>
+  <div class="data-badge">
+    <label class="switch">
+        <input type="checkbox" id="dataToggle" checked>
+        <span class="slider"></span>
+    </label>
+    <span id="dataStatus">
+        Data Mode: <strong>SIMULATED</strong>
+    </span>
+    <span class="info-tip" title="Simulated data is for educational and prototype purposes only. No live mission authorization or telemetry is implied.">
+        ⓘ
+    </span>
+</div>
+
     <style>
         :root {
             --space-black: #050b14;
@@ -23,6 +36,60 @@
             --artemis-orange: #ff6600;
             --culture-teal: #058397;
             --neon-green: #90C53D;
+          /* Data Simulation Badge */
+.data-badge {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    margin-top: 10px;
+    font-size: 0.85rem;
+    opacity: 0.85;
+}
+
+/* Toggle Switch */
+.switch {
+    position: relative;
+    display: inline-block;
+    width: 42px;
+    height: 22px;
+}
+.switch input {
+    opacity: 0;
+    width: 0;
+    height: 0;
+}
+.slider {
+    position: absolute;
+    cursor: pointer;
+    background-color: #555;
+    border-radius: 22px;
+    top: 0; left: 0; right: 0; bottom: 0;
+    transition: 0.3s;
+}
+.slider:before {
+    position: absolute;
+    content: "";
+    height: 16px;
+    width: 16px;
+    left: 3px;
+    bottom: 3px;
+    background-color: white;
+    border-radius: 50%;
+    transition: 0.3s;
+}
+input:checked + .slider {
+    background-color: var(--artemis-orange);
+}
+input:checked + .slider:before {
+    transform: translateX(20px);
+}
+
+/* Info tooltip */
+.info-tip {
+    cursor: help;
+    color: var(--culture-teal);
+}
+
         }
         body { 
             background: var(--space-black); 
@@ -116,11 +183,25 @@
     const d = new Date();
     d.setMonth(d.getMonth() + 3);
     document.getElementById('launch-date').innerText = d.toDateString();
+  <script>
+    const toggle = document.getElementById("dataToggle");
+    const status = document.getElementById("dataStatus");
+
+    toggle.addEventListener("change", () => {
+        if (toggle.checked) {
+            status.innerHTML = 'Data Mode: <strong>SIMULATED</strong>';
+        } else {
+            status.innerHTML = 'Data Mode: <strong>REFERENCE-ONLY</strong>';
+        }
+    });
+</script>
+
 </script>
 
 </body>
 
 </html>
+
 
 
 
