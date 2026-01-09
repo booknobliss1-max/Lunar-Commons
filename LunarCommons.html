@@ -1,0 +1,113 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Lunar Commons | CultureCare Dashboard</title>
+    <style>
+        :root {
+            --space-black: #050b14;
+            --lunar-silver: #e0e0e0;
+            --artemis-orange: #ff6600;
+            --culture-teal: #058397;
+            --neon-green: #90C53D;
+        }
+        body { 
+            background: var(--space-black); 
+            color: var(--lunar-silver); 
+            font-family: 'Courier New', monospace; 
+            margin: 0; padding: 0; 
+        }
+        .dashboard-container { padding: 2rem; max-width: 1200px; margin: auto; }
+        header { border-bottom: 2px solid var(--culture-teal); padding-bottom: 1rem; margin-bottom: 2rem; }
+        
+        .grid { display: grid; grid-template-columns: 2fr 1fr; gap: 20px; }
+        .card { background: rgba(255, 255, 255, 0.05); border: 1px solid var(--culture-teal); border-radius: 10px; padding: 20px; }
+        
+        h2 { color: var(--neon-green); text-transform: uppercase; font-size: 1.2rem; }
+        
+        /* Simulated Licensing Flow */
+        .step { margin: 10px 0; padding: 10px; border-left: 3px solid var(--artemis-orange); background: rgba(255,102,0,0.1); }
+        
+        /* Interactive Input */
+        textarea, input, select { 
+            width: 100%; background: #1a1a1a; color: white; border: 1px solid var(--culture-teal); 
+            padding: 10px; margin-top: 10px; border-radius: 5px; 
+        }
+        button { 
+            background: var(--neon-green); color: var(--space-black); border: none; 
+            padding: 12px 20px; font-weight: bold; cursor: pointer; margin-top: 15px; border-radius: 5px;
+        }
+        button:hover { background: white; }
+
+        .api-pulse { color: var(--artemis-orange); font-weight: bold; animation: blink 2s infinite; }
+        @keyframes blink { 50% { opacity: 0; } }
+    </style>
+</head>
+<body>
+
+<div class="dashboard-container">
+    <header>
+        <h1>LUNAR COMMONS: A Dashboard for Shared Futures</h1>
+        <p>Production Lab: <span class="api-pulse">● LIVE</span> // ARTE-MIS API FEED ACTIVE</p>
+    </header>
+
+    <div class="grid">
+        <div class="left-col">
+            <div class="card" style="margin-bottom: 20px;">
+                <h2>NASA Artemis Mission Telemetry</h2>
+                <p>Status: <strong>Pre-Launch Configuration</strong></p>
+                <p>Next Lunar Window: <span id="launch-date">Calculating...</span></p>
+                <small>Integration: NASA Open Innovation API v2.1</small>
+            </div>
+
+            <div class="card">
+                <h2>Lunar Launch Licensing Flow</h2>
+                <p>Ensure your mission adheres to the <em>Interstellar IP Anthology</em> protocols.</p>
+                
+                <div class="step">
+                    <strong>Step 01: Payload Registry</strong>
+                    <input type="text" placeholder="Mission Name (e.g., Heritage One)">
+                </div>
+                <div class="step">
+                    <strong>Step 02: Ethical Alignment Audit</strong>
+                    <select>
+                        <option>Community Heritage Preservation</option>
+                        <option>Lunar Resource Equity</option>
+                        <option>Whole Health Biodiversity</option>
+                    </select>
+                </div>
+                <button onclick="alert('Licensing Application Initialized via CultureCare Ledger.')">Initialize Launch Flow</button>
+            </div>
+        </div>
+
+        <div class="right-col">
+            <div class="card">
+                <h2>Design Your Mission</h2>
+                <p><em>Ethical Prompt:</em> If you were the first CHW on the Moon, how would you protect the community's "Mental Health Assets"?</p>
+                <textarea rows="5" placeholder="Draft your Mission Statement..."></textarea>
+                
+                <hr style="border: 0.5px solid var(--culture-teal); margin: 20px 0;">
+                
+                <h2>Community Pulse</h2>
+                <p><strong>Q: What would you bring to the Moon?</strong></p>
+                <input type="text" placeholder="E.g., Seeds from my grandmother's garden">
+                <button style="width: 100%;">Submit to Lunar Commons</button>
+            </div>
+        </div>
+    </div>
+
+    <footer style="margin-top: 3rem; font-size: 0.8rem; text-align: center; opacity: 0.6;">
+        <p>Registry: Zenodo DOI 10.5281/zenodo.17921911 | Production: Tiffany Johnson, CHW</p>
+    </footer>
+</div>
+
+<script>
+    // Simple simulated API date fetch
+    const d = new Date();
+    d.setMonth(d.getMonth() + 3);
+    document.getElementById('launch-date').innerText = d.toDateString();
+</script>
+
+</body>
+</html>
