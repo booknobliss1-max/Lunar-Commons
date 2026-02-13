@@ -184,21 +184,33 @@ input:checked + .slider:before {
 </div>
 
 <script>
-    // Simple simulated API date fetch
-    const d = new Date();
-    d.setMonth(d.getMonth() + 3);
-    document.getElementById('launch-date').innerText = d.toDateString();
-  <script>
-    const toggle = document.getElementById("dataToggle");
-    const status = document.getElementById("dataStatus");
+    // 1. Identify where on the page the data should go
+const displayArea = document.getElementById('launch-date');
 
-    toggle.addEventListener("change", () => {
-        if (toggle.checked) {
-            status.innerHTML = 'Data Mode: <strong>SIMULATED</strong>';
-        } else {
-            status.innerHTML = 'Data Mode: <strong>REFERENCE-ONLY</strong>';
-        }
-    });
+// 2. Define the function to get the data
+async function getNASAData() {
+    displayArea.innerText = "Connecting to NASA... 🛰️";
+
+    try {
+        // We call the 'Astronomy Picture of the Day' API as a test for telemetry
+        const response = await fetch('https://api.nasa.gov/planetary/apod?api_key=DEMO_KEY');
+        
+        // 3. Convert the raw data into a readable object
+        const data = await response.json();
+
+        // 4. Update your dashboard with the live data
+        // Here, we use the date from the NASA server
+        displayArea.innerHTML = `LUNAR WINDOW SYNCED: ${data.date} <br> <small>Current Focus: ${data.title}</small>`;
+        
+    } catch (error) {
+        // If NASA's server is down (rare but possible), show an error
+        console.error("Transmission Interrupted:", error);
+        displayArea.innerText = "OFFLINE: Check Comms Link";
+    }
+}
+
+// 5. Run the function automatically when the page loads
+getNASAData();
 </script>
 
 </script>
@@ -206,13 +218,3 @@ input:checked + .slider:before {
 </body>
 
 </html>
-
-
-
-
-
-
-
-
-
-
