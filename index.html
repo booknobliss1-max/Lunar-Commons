@@ -165,6 +165,31 @@ input:checked + .slider:before {
                 <h2>Design Your Mission</h2>
                 <p><em>Ethical Prompt:</em> If you were the first CHW on the Moon, how would you protect the community's "Mental Health Assets"?</p>
                 <textarea rows="5" placeholder="Draft your Mission Statement..."></textarea>
+              <textarea id="user-mission-input" rows="5" placeholder="If you were the first CHW on the Moon, how would you protect the community's 'Mental Health Assets'?"></textarea>
+
+<button onclick="shareToTwitter()" style="background: #1DA1F2; color: white; width: 100%; margin-top: 10px;">
+    🚀 Share Mission to Twitter/X
+</button>
+
+<script>
+function shareToTwitter() {
+    // 1. Get the user's answer from the textarea
+    const userText = document.getElementById('user-mission-input').value;
+    
+    // 2. Define your site URL and hashtags
+    const siteUrl = "https://booknobliss1-max.github.io/-Sister-Big-Dress-Energy/";
+    const hashtags = "LunarCommons,SpaceCare,CultureCare";
+    
+    // 3. Create the pre-filled message
+    // We encode the text so the URL handles spaces and emojis correctly
+    const tweetText = encodeURIComponent(`My Lunar Mission Statement: "${userText}" \n\nCheck the dashboard: `);
+    
+    // 4. Open the Twitter Intent window
+    const twitterWindow = `https://twitter.com/intent/tweet?text=${tweetText}&url=${siteUrl}&hashtags=${hashtags}`;
+    
+    window.open(twitterWindow, '_blank');
+}
+</script>
                 
                 <hr style="border: 0.5px solid var(--culture-teal); margin: 20px 0;">
                 
@@ -218,3 +243,4 @@ getNASAData();
 </body>
 
 </html>
+
