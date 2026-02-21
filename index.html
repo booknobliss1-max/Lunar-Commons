@@ -215,9 +215,6 @@
         window.open(`https://twitter.com/intent/tweet?text=${text}&url=${siteUrl}`, '_blank');
     }
 
-    // --- Clock ---
-    function updateClock() { const now = new Date(); const hours = String(now.getHours()).padStart(2, '0'); const minutes = String(now.getMinutes()).padStart(2, '0'); const seconds = String(now.getSeconds()).padStart(2, '0'); document.getElementById('clock').innerText = `${hours}:${minutes}:${seconds}`; }
-
     // Initialize
     setInterval(updateClock, 1000);
     getNASAData();
@@ -226,6 +223,7 @@
 
 </body>
 </html>
+
 
 
 
