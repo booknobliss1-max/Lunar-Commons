@@ -152,6 +152,50 @@
         <p>Future Forward: <span id="clock">Texas Boots</span> Community</p>
     </footer>
 </div>
+<!-- Conjunction Event Flow Section -->
+<section id="conjunction-flow" class="lc-panel">
+  <div class="lc-panel-inner">
+    <h2 class="lc-title">🛰️ Conjunction Event Flow</h2>
+    <p class="lc-subtitle">From Ephemeris Data to CSieve Output</p>
+
+    <div class="lc-flow">
+      <div class="lc-step">
+        <h3>Ephemeris Data (Raw Inputs)</h3>
+        <p>Position, velocity, and covariance data describing each object's motion.</p>
+      </div>
+
+      <div class="lc-step">
+        <h3>Assign Screening Volumes</h3>
+        <p>Safety volumes set by orbit regime (LEO, Deep Space, etc.).</p>
+      </div>
+
+      <div class="lc-step">
+        <h3>All‑vs‑All Screening</h3>
+        <p>Each object checked against every other object for potential close approaches.</p>
+      </div>
+
+      <div class="lc-step">
+        <h3>Compute Time of Closest Approach (TCA)</h3>
+        <p>Minimum range and relative velocity (Vrel) at closest approach.</p>
+      </div>
+
+      <div class="lc-step">
+        <h3>Risk Assessment</h3>
+        <p>Collision probability (Pc) and dilution based on covariance quality.</p>
+      </div>
+
+      <div class="lc-step">
+        <h3>Relative Geometry</h3>
+        <p>UVW frame: position of Object 2 relative to Object 1.</p>
+      </div>
+
+      <div class="lc-step">
+        <h3>CSieve Output File</h3>
+        <p>Final conjunction report containing all event data.</p>
+      </div>
+    </div>
+  </div>
+</section>
 
   <section id="conjunction-event-flow" class="lc-panel">
   <div class="lc-panel-inner">
