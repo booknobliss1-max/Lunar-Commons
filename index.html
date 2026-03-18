@@ -197,50 +197,7 @@
   </div>
 </section>
 
-  <section id="conjunction-event-flow" class="lc-panel">
-  <div class="lc-panel-inner">
-    <h2 class="lc-panel-title">🛰️ Conjunction Event Flow</h2>
-    <p class="lc-panel-subtitle">From Ephemeris Data to CSieve Output</p>
-
-    <div class="lc-flow-grid">
-      <article class="lc-flow-step">
-        <h3>Ephemeris Data (Raw Inputs)</h3>
-        <p>Position, velocity, and covariance data describing each object’s motion over time.</p>
-      </article>
-
-      <article class="lc-flow-step">
-        <h3>Assign Screening Volumes</h3>
-        <p>Set safety volumes based on orbit regime (LEO, Deep Space, etc.).</p>
-      </article>
-
-      <article class="lc-flow-step">
-        <h3>All‑vs‑All Screening</h3>
-        <p>Check each object against every other object to find potential close approaches.</p>
-      </article>
-
-      <article class="lc-flow-step">
-        <h3>Compute Time of Closest Approach (TCA)</h3>
-        <p>Determine minimum range and relative velocity (Vrel) at closest approach.</p>
-      </article>
-
-      <article class="lc-flow-step">
-        <h3>Risk Assessment</h3>
-        <p>Calculate collision probability (Pc) and dilution based on covariance quality.</p>
-      </article>
-
-      <article class="lc-flow-step">
-        <h3>Relative Geometry</h3>
-        <p>Express the encounter in the UVW frame: position of Object 2 relative to Object 1.</p>
-      </article>
-
-      <article class="lc-flow-step">
-        <h3>CSieve Output File</h3>
-        <p>Conjunction report containing all event data for operators and tools.</p>
-      </article>
-    </div>
-  </div>
-</section>
-
+ 
 <script>
     // --- Ethical Carousel Logic ---
     const prompts = [
