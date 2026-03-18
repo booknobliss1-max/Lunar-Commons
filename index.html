@@ -203,7 +203,47 @@
         <p>Future Forward: <span id="clock">Texas Boots</span> Community</p>
     </footer>
 </div>
-  
+
+  <!-- Live Conjunction Status Widget -->
+<aside id="live-conjunction-status" class="lc-panel">
+  <div class="lc-panel-inner">
+    <h2 class="lc-title">🛰️ Live Conjunction Status</h2>
+    <p class="lc-subtitle">Artemis Ops Feed — SIMULATED</p>
+
+    <div class="lc-status-block">
+      <p class="lc-status-label">Current Status:</p>
+      <p class="lc-status-value" id="conj-status-value">Nominal — No Active Alerts</p>
+    </div>
+
+    <div class="lc-status-metrics">
+      <div class="lc-metric">
+        <span class="lc-metric-label">Active Objects:</span>
+        <span class="lc-metric-value" id="conj-active-objects">—</span>
+      </div>
+
+      <div class="lc-metric">
+        <span class="lc-metric-label">Screened Pairs:</span>
+        <span class="lc-metric-value" id="conj-screened-pairs">—</span>
+      </div>
+
+      <div class="lc-metric">
+        <span class="lc-metric-label">Potential Events:</span>
+        <span class="lc-metric-value" id="conj-events">—</span>
+      </div>
+
+      <div class="lc-metric">
+        <span class="lc-metric-label">Last Update:</span>
+        <span class="lc-metric-value" id="conj-last-update">—</span>
+      </div>
+    </div>
+
+    <p class="lc-footer-note">
+      Data Source: TraCSS Testset (SIM)  
+      <br>CSieve Output → Human‑Readable Summary
+    </p>
+  </div>
+</aside>
+
 <!-- Conjunction Event Flow Section -->
 <section id="conjunction-flow" class="lc-panel">
   <div class="lc-panel-inner">
