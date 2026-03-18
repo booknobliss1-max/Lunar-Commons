@@ -77,6 +77,57 @@
         
         .carousel-box { min-height: 80px; border-bottom: 1px solid rgba(255,255,255,0.1); margin-bottom: 15px; padding-bottom: 10px;}
         .prompt-query { font-style: italic; color: #88c0d0; font-size: 0.9em; }
+      #conjunction-flow {
+  margin: 2rem auto;
+  max-width: 900px;
+}
+
+#conjunction-flow .lc-panel-inner {
+  background: rgba(10, 15, 35, 0.85);
+  padding: 1.75rem 2rem;
+  border-radius: 14px;
+  border: 1px solid rgba(255,255,255,0.08);
+}
+
+#conjunction-flow .lc-title {
+  margin: 0 0 0.25rem;
+  font-size: 1.6rem;
+}
+
+#conjunction-flow .lc-subtitle {
+  margin: 0 0 1.5rem;
+  opacity: 0.8;
+}
+
+#conjunction-flow .lc-flow {
+  display: grid;
+  gap: 1rem;
+}
+
+@media (min-width: 720px) {
+  #conjunction-flow .lc-flow {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+#conjunction-flow .lc-step {
+  background: rgba(15, 20, 45, 0.9);
+  padding: 1rem;
+  border-radius: 10px;
+  border: 1px solid rgba(255,255,255,0.06);
+}
+
+#conjunction-flow .lc-step h3 {
+  margin: 0 0 0.35rem;
+  font-size: 1rem;
+}
+
+#conjunction-flow .lc-step p {
+  margin: 0;
+  font-size: 0.9rem;
+  line-height: 1.4;
+}
+
     </style>
 </head>
 <body>
